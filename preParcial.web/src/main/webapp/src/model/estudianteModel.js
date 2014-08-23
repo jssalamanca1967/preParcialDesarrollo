@@ -32,6 +32,12 @@ define(['model/_estudianteModel'], function() {
 
  	validate: function(attrs,options){
             var validationMessage = "";
+            
+            var prom = attrs.puntosCalidad/attrs.creditos;
+            if(prom<3.25)
+            {
+                validationMessage = "El promedio acumulado debe ser mayor a 3.25.";
+            }
             if(!attrs.name){
                 validationMessage = "The name can't be empty.";
             }
