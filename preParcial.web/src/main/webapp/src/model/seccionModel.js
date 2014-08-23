@@ -32,6 +32,10 @@ define(['model/_seccionModel'], function() {
 
  	validate: function(attrs,options){
             var validationMessage = "";
+            if(!attrs.profesor_seccionId)
+            {
+                validationMessage="La seccion debe tener profesor asignado."
+            }
             if(!attrs.name){
                 validationMessage = "The name can't be empty.";
             }
