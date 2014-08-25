@@ -32,6 +32,26 @@ define(['model/_cursoModel'], function() {
 
  	validate: function(attrs,options){
             var validationMessage = "";
+            
+            // TODO No hay cursos en la Universidad que no estén asociados a un programa académico. Cada programa académico tiene un nombre de 4 letras mayúsculas (por ejemplo, ISIS o FISI).
+            
+            if(attrs.programa.length == 4 )
+            {
+                var a = attrs.programa.charCodeAt(0);
+                var b = attrs.programa.charCodeAt(1);
+                var c = attrs.programa.charCodeAt(2);
+                var d = attrs.programa.charCodeAt(3);
+                
+                if(a < 64 || a > 90 || b < 64 || b > 90 || c < 64 || c > 90 || d < 64 || d > 90 )
+                {
+                    validationMessage = "Los 4 caracteres del programa deben ser letras mayúsculas.";
+                }
+            }
+            else
+            {
+                validationMessage = "El programa debe ser una cadena de 4 caracteres.";
+            }
+            
             if(!attrs.name){
                 validationMessage = "The name can't be empty.";
             }
