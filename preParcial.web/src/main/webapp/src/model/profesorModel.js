@@ -36,7 +36,7 @@ define(['model/_profesorModel'], function() {
             //TODO La Universidad no permite que profesores con menos de 5 años de experiencia dicten secciones de cursos.                      
             
             if(attrs.aniosExperiencia < 5)
-            {
+            {                
                 validationMessage = "Error: No se permite que profesores con menos de 5 años de experiencia dicten secciones de cursos.";
             }
             
