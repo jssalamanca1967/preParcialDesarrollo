@@ -8,6 +8,7 @@
 		 <th>Anios Experiencia</th>
 		 <th>Num Publicaciones</th>
 		 <th>Fecha Vinculacion</th>
+                 <th>Tipo de profesor
     <th>Actions</th>
     </tr>
     </thead>
@@ -18,6 +19,7 @@
 		<td><%= htmlEncode(profesor.getDisplay('aniosExperiencia')) %></td>
 		<td><%= htmlEncode(profesor.getDisplay('numPublicaciones')) %></td>
 		<td><%= htmlEncode(profesor.getDisplay('fechaVinculacion')) %></td>
+                <td><a onclick="Backbone.trigger('<%= componentId %>-profesor-show-type',{publicaciones:<%= htmlEncode(profesor.getDisplay('numPublicaciones')) %>,exp:<%= htmlEncode(profesor.getDisplay('aniosExperiencia')) %>,mes:<%= htmlEncode(profesor.getDisplay('fechaVinculacion').split("/")[0]) %>,dia:<%= htmlEncode(profesor.getDisplay('fechaVinculacion').split("/")[1]) %>,ano:<%= htmlEncode(profesor.getDisplay('fechaVinculacion').split("/")[2]) %>}); return false;" >Ver Tipo</a></td>
     <td>
     <% if(showEdit) {%>
     <a onclick="Backbone.trigger('<%= componentId %>-profesor-edit',{id:<%= profesor.id %>}); return false" >Edit</a> |

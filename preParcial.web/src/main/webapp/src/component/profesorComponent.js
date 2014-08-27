@@ -35,13 +35,16 @@ define(['component/_CRUDComponent', 'controller/toolbarController','model/profes
         controller : App.Controller.ProfesorController,
         
          postInit: function(options) {
-        var self = this;
-
+            var self = this;
+            
         this.addButton({name: "Profesores quinquenio", icon: "glyphicon-stats", }, function() {
                  self.componentController.sportPromedio();
-             
-                });
-        }
+                 
+             });
+             Backbone.on(self.componentId + '-profesor-show-type', function(params) {
+                self.componentController.tipo(params);
+            });
+        }        
     });
     return App.Component.ProfesorComponent;
 });
