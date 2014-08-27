@@ -36,7 +36,11 @@ define(['component/_CRUDComponent', 'controller/toolbarController', 'model/toolb
         
         postInit: function(options) {
         var self = this;
-
+        this.toolbarModel.set('createName', 'Crear');
+        this.toolbarModel.set('refreshName', 'Refrescar');
+        this.toolbarModel.set('showPrint', false);
+        this.toolbarModel.set('showSearch', false);
+        this.toolbarModel.set('title', 'secci\xf3n');
         this.addButton({name: "Al 80% de capacidad", icon: "glyphicon-stats", }, function() {
                  self.componentController.sportPromedio();
              

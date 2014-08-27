@@ -37,7 +37,12 @@ define(['component/_CRUDComponent', 'controller/toolbarController','model/profes
          postInit: function(options) {
             var self = this;
             
-        this.addButton({name: "Profesores quinquenio", icon: "glyphicon-stats", }, function() {
+            this.toolbarModel.set('createName', 'Crear');
+            this.toolbarModel.set('refreshName', 'Refrescar');
+            this.toolbarModel.set('showPrint', false);
+            this.toolbarModel.set('showSearch', false);
+            
+            this.addButton({name: "Profesores quinquenio", icon: "glyphicon-stats", }, function() {
                  self.componentController.sportPromedio();
                  
              });
